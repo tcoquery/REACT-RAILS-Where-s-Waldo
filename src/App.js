@@ -5,19 +5,18 @@ import hollywood from './images/hollywood.jpg';
 import ski from './images/ski.jpg';
 import space from './images/space.jpg';
 import track from './images/track.jpg';
-import uniqid from "uniqid";
 import Card from './components/Card';
 
 
 
 function App() {
   const [images, setImages] = useState([
-    {img:beach, name:"beach puzzle", id:uniqid()},
-    {img:fruit, name:"fruit puzzle", id:uniqid()},
-    {img:hollywood, name:"hollywood puzzle", id:uniqid()},
-    {img:ski, name:"ski puzzle", id:uniqid()},
-    {img:space, name:"space puzzle", id:uniqid()},
-    {img:track, name:"track puzzle", id:uniqid()}
+    {img:beach, name:"beach puzzle", id:1},
+    {img:fruit, name:"fruit puzzle", id:2},
+    {img:hollywood, name:"hollywood puzzle", id:3},
+    {img:ski, name:"ski puzzle", id:4},
+    {img:space, name:"space puzzle", id:5},
+    {img:track, name:"track puzzle", id:6}
   ])
 
 
