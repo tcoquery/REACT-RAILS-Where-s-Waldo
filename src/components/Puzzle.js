@@ -1,12 +1,15 @@
 import { useLocation } from 'react-router-dom'
+import { useState } from 'react';
 
 const Puzzle = (props) => {
   const location = useLocation();
   const state = location.state;
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
   const getCoordinates = (e) => {
-    console.log(e.clientX);
-    console.log(e.clientY);
+    setX(e.pageX);
+    setY(e.pageY);
   };
 
   return (
