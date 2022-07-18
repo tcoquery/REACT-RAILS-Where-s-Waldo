@@ -1,3 +1,4 @@
+import React, {useState} from "react"
 import beach from './images/beach.jpg';
 import fruit from './images/fruit.jpg';
 import hollywood from './images/hollywood.jpg';
@@ -10,7 +11,7 @@ import Card from './components/Card';
 
 
 function App() {
-  const [images, setImages] = ([
+  const [images, setImages] = useState([
     {img:beach, name:"beach puzzle", id:uniqid()},
     {img:fruit, name:"fruit puzzle", id:uniqid()},
     {img:hollywood, name:"hollywood puzzle", id:uniqid()},
