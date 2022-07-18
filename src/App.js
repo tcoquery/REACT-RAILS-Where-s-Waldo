@@ -7,8 +7,6 @@ import space from './images/space.jpg';
 import track from './images/track.jpg';
 import Card from './components/Card';
 
-
-
 function App() {
   const [images, setImages] = useState([
     {img:beach, name:"beach puzzle", id:1},
@@ -19,14 +17,13 @@ function App() {
     {img:track, name:"track puzzle", id:6}
   ])
 
-
   return (
     <div>
       <h1>Where's Waldo ?</h1>
       <h2>Choose an image</h2> 
       <Card images={images}/>
     </div>
-  );
+    );
 }
 
 export default App;
