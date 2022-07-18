@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  found: false
+  x: 1
+  'y': 1
+  image: one
+
+two:
+  name: MyString
+  found: false
+  x: 1
+  'y': 1
+  image: two
