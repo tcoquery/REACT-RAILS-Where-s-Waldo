@@ -6,7 +6,6 @@ import ski from './images/ski.jpg';
 import space from './images/space.jpg';
 import track from './images/track.jpg';
 import Card from './components/Card';
-import Test from './components/Test'
 
 function App() {
   const [images, setImages] = useState([
@@ -23,7 +22,6 @@ function App() {
       <h1>Where's Waldo ?</h1>
       <h2>Choose an image</h2> 
       <Card images={images}/>
-      <Test></Test>
     </div>
     );
 }
