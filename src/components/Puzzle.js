@@ -23,7 +23,7 @@ const Puzzle = () => {
         }
       }
     });
-  });
+  }, []) ;
 
   const getCoordinates = (e) => {
     const newX = e.pageX;
