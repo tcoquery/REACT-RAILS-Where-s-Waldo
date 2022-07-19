@@ -23,16 +23,30 @@ const Puzzle = () => {
         }
       }
     });
-  }, []);
+  });
 
   const getCoordinates = (e) => {
-    setX(e.pageX);
-    setY(e.pageY);
+    const newX = e.pageX;
+    const newY = e.pageY;
+    setX(newX);
+    setY(newY);
+    checkInput(newX,newY);
+  };
+
+  const checkInput = (x, y) => {
+    characters.forEach((char) => {
+      if( (char.x + 50) > x &&
+          (char.x - 50) < x &&
+          (char.y + 50) > y &&
+          (char.y - 50) < y 
+        ) {
+            console.log(`you found ${char.name}`);
+          }
+    })
   };
 
   return (
     <div>
-      
       <img onClick={getCoordinates} src={state.img} alt={state.name}/>
       <Character/>
     </div>
