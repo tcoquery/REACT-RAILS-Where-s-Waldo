@@ -1,39 +1,37 @@
 import { useLocation } from 'react-router-dom'
-import { useState } from 'react';
-import Odlaw from "../images/Odlaw.jpg";
-import Waldo from "../images/Waldo.jpg";
-import Wenda from "../images/Wenda.jpg";
-import Whitebeard from "../images/Whitebeard.jpg";
-import Woof from "../images/Woof.jpg";
+import { useState, useEffect } from 'react';
+import axios from "axios";
+import Character from './Character';
 
-const Puzzle = (props) => {
+const baseURL = "http://localhost:3000/";
+
+const Puzzle = () => {
   const location = useLocation();
   const state = location.state;
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
-  const [characters, setCharacters] = useState([
-    {img:Waldo, id:1, name:"Waldo"},
-    {img:Wenda, id:2, name:"Wenda"},
-    {img:Odlaw, id:3, name:"Odlaw"},
-    {img:Whitebeard, id:4, name:"Whitebeard"},
-    {img:Woof, id:5, name:"Woof"}
-  ]);
+  const [characters, setChars] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setChars(response.data);
+    });
+  }, []);
+
+  const checkInput = () => {
+
+  };
 
   const getCoordinates = (e) => {
     setX(e.pageX);
     setY(e.pageY);
+    checkInput();
   };
 
   return (
     <div>
-      
-        {characters.map((character) => {
-          return <div key={character.id}>
-          <img src={character.img} alt={character.name}/>
-          </div>
-        })}
-      
       <img onClick={getCoordinates} src={state.img} alt={state.name}/>
+      <Character/>
     </div>
   )
 };
