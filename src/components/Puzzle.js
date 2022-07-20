@@ -66,6 +66,7 @@ const Puzzle = () => {
     setX(newX);
     setY(newY);
     checkInput(newX,newY);
+    gameOver();
   };
 
   const checkInput = (x, y) => {
@@ -112,6 +113,13 @@ const Puzzle = () => {
           }
     })
   };
+
+  const gameOver = () => {
+    if(found === 5) {
+      pause();
+      console.log("game over, you found all the characters")
+    }
+  }
 
   return (
     <div>
