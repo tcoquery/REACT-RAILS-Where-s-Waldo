@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useLocation, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import { useTimer } from 'use-timer';
 import axios from "axios";
 import Character from './Character';
 
@@ -18,6 +19,8 @@ const Puzzle = () => {
   const [WoofFound, setWoofFound] = useState(false);
   const [WhitebeardFound, setWhitebeardFound] = useState(false);
   const [OdlawFound, setOdlawFound] = useState(false);
+  const [found, setFound] = useState(0);
+  const { time, start, pause } = useTimer();
 
   const foundWaldo = () => {
     setWaldoFound(true);
@@ -53,6 +56,10 @@ const Puzzle = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []) ;
 
+  useEffect(() => {
+    start();
+  }, [start])
+
   const getCoordinates = (e) => {
     const newX = e.pageX;
     const newY = e.pageY;
@@ -63,26 +70,41 @@ const Puzzle = () => {
 
   const checkInput = (x, y) => {
     characters.forEach((char) => {
-      if( (char.x + 50) > x &&
-          (char.x - 50) < x &&
-          (char.y + 50) > y &&
-          (char.y - 50) < y 
+      if( (char.x + 75) > x &&
+          (char.x - 75) < x &&
+          (char.y + 75) > y &&
+          (char.y - 75) < y 
         ) {
             switch(char.name) {
               case "Waldo":
-                foundWaldo();
+                if(!WaldoFound) {
+                  foundWaldo();
+                  setFound(found+1);
+                } 
                 break;
               case "Wenda":
-                foundWenda();
+                if(!WendaFound) {
+                  foundWenda();
+                  setFound(found+1);
+                } 
                 break;
               case "Woof":
-                foundWoof();
+                if(!WoofFound) {
+                  foundWoof();
+                  setFound(found+1);
+                } 
                 break;
               case "Whitebeard":
-                foundWhitebeard();
+                if(!WhitebeardFound) {
+                  foundWhitebeard();
+                  setFound(found+1);
+                } 
                 break;
               case "Odlaw":
-                foundOdlaw();
+                if(!OdlawFound) {
+                  foundOdlaw();
+                  setFound(found+1);
+                } 
                 break;
               default:
                 return;
@@ -93,6 +115,7 @@ const Puzzle = () => {
 
   return (
     <div>
+      <p>{time}</p>
       <img onClick={getCoordinates} src={state.img} alt={state.name}/>
       <Character characters={characters} foundWaldo={WaldoFound} foundWenda={WendaFound} foundOdlaw={OdlawFound} foundWhitebeard={WhitebeardFound} foundWoof={WoofFound}/>
     </div>
