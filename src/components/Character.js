@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import Odlaw from '../images/Odlaw.jpg';
 import Waldo from '../images/Waldo.jpg';
@@ -10,24 +11,23 @@ import WendaFound from '../images/Wenda-found.jpg';
 import WhitebeardFound from '../images/Whitebeard-found.jpg';
 import WoofFound from '../images/Woof-found.jpg';  
 
-const Character = () => {
-  const [characters, setCharacters] = useState([
-    {img:Waldo, imgFound:WaldoFound, id:1, name:'Waldo'},
-    {img:Wenda, imgFound:WendaFound, id:2, name:'Wenda'},
-    {img:Odlaw, imgFound:OdlawFound, id:3, name:'Odlaw'},
-    {img:Whitebeard, imgFound:WhitebeardFound, id:4, name:'Whitebeard'},
-    {img:Woof, imgFound:WoofFound, id:5, name:'Woof'}
-  ]);
+const Character = (props) => {
+  const [waldo, setWaldo] = useState({img:Waldo, imgFound:WaldoFound, name:'Waldo'});
+  const [wenda, setWenda] = useState({img:Wenda, imgFound:WendaFound, name:'Wenda'});
+  const [odlaw, setOdlaw] = useState({img:Odlaw, imgFound:OdlawFound, name:'Odlaw'});
+  const [whitebeard, setWhitebeard] = useState({img:Whitebeard, imgFound:WhitebeardFound, name:'Whitebeard'});
+  const [woof, setWoof] = useState({img:Woof, imgFound:WoofFound, name:'Woof'});
+
 
   return (
     <div>
-    {characters.map((character) => {
-      return <div key={character.id}>
-      <img src={character.img} alt={character.name}/>
-      </div>
-    })}
+    {props.foundWaldo ? <img src={waldo.imgFound} alt={waldo.name}/> : <img src={waldo.img} alt={waldo.name}/>}
+    {props.foundWenda ? <img src={wenda.imgFound} alt={wenda.name}/> : <img src={wenda.img} alt={wenda.name}/>}
+    {props.foundOdlaw ? <img src={odlaw.imgFound} alt={odlaw.name}/> : <img src={odlaw.img} alt={odlaw.name}/>}
+    {props.foundWhitebeard ? <img src={whitebeard.imgFound} alt={whitebeard.name}/> : <img src={whitebeard.img} alt={whitebeard.name}/>}
+    {props.foundWoof ? <img src={woof.imgFound} alt={woof.name}/> : <img src={woof.img} alt={woof.name}/>}
     </div>
   );
 };
 
-export default Character;
+export default Character
