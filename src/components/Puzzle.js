@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTimer } from 'use-timer';
 import axios from "axios";
 import Character from './Character';
+import NewPlayer from './NewPlayer';
 
 const baseURL = "http://localhost:3000/";
 
@@ -60,13 +61,18 @@ const Puzzle = () => {
     start();
   }, [start])
 
+  useEffect(() => {
+    if (found === 5)
+      pause();
+  }, [found]);
+
   const getCoordinates = (e) => {
     const newX = e.pageX;
     const newY = e.pageY;
     setX(newX);
     setY(newY);
     checkInput(newX,newY);
-    gameOver();
+
   };
 
   const checkInput = (x, y) => {
@@ -114,16 +120,14 @@ const Puzzle = () => {
     })
   };
 
-  const gameOver = () => {
-    if(found === 5) {
-      pause();
-      console.log("game over, you found all the characters")
-    }
-  }
+  let newPlayer;
+
+  if(found === 5) newPlayer = <NewPlayer time={time} puzzleID={params.puzzleId}/>
 
   return (
     <div>
       <p>{time}</p>
+      <div>{newPlayer}</div>
       <img onClick={getCoordinates} src={state.img} alt={state.name}/>
       <Character characters={characters} foundWaldo={WaldoFound} foundWenda={WendaFound} foundOdlaw={OdlawFound} foundWhitebeard={WhitebeardFound} foundWoof={WoofFound}/>
     </div>
