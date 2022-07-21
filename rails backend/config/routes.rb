@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "characters#index"
   post '/player', to: 'players#create'
+  get '/players', to: 'players#index'
 end

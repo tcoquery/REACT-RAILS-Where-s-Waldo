@@ -5,6 +5,7 @@ import { useTimer } from 'use-timer';
 import axios from "axios";
 import Character from './Character';
 import NewPlayer from './NewPlayer';
+import Scores from './Scores';
 
 const baseURL = "http://localhost:3000/";
 
@@ -121,13 +122,18 @@ const Puzzle = () => {
   };
 
   let newPlayer;
+  let scores;
 
-  if(found === 5) newPlayer = <NewPlayer time={time} puzzleID={params.puzzleId}/>
+  if(found === 5) {
+    newPlayer = <NewPlayer time={time} puzzleID={params.puzzleId}/>
+    scores = <Scores puzzleID={params.puzzleId}/>
+  }
 
   return (
     <div>
       <p>{time}</p>
       <div>{newPlayer}</div>
+      <div>{scores}</div>
       <img onClick={getCoordinates} src={state.img} alt={state.name}/>
       <Character characters={characters} foundWaldo={WaldoFound} foundWenda={WendaFound} foundOdlaw={OdlawFound} foundWhitebeard={WhitebeardFound} foundWoof={WoofFound}/>
     </div>

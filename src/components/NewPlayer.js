@@ -10,7 +10,8 @@ const NewPlayer = (props) => {
   }
 
   const onSubmit = (e) => {
-     axios.post("http://localhost:3000/player", { player: {name: name, time: time, image_id: props.puzzleID}})
+    e.preventDefault();
+    axios.post("http://localhost:3000/player", { player: {name: name, time: time, image_id: props.puzzleID}})
   };
 
   return (
