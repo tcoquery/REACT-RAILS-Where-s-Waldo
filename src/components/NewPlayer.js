@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const NewPlayer = (props) => {
   const [name, setName] = useState('');
@@ -12,6 +13,7 @@ const NewPlayer = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:3000/player", { player: {name: name, time: time, image_id: props.puzzleID}})
+    window.location.href="http://localhost:4000";
   };
 
   return (
