@@ -24,26 +24,6 @@ const Puzzle = () => {
   const [found, setFound] = useState(0);
   const { time, start, pause } = useTimer();
 
-  const foundWaldo = () => {
-    setWaldoFound(true);
-  }
-
-  const foundWenda = () => {
-    setWendaFound(true);
-  }
-
-  const foundWoof = () => {
-    setWoofFound(true);
-  }
-
-  const foundWhitebeard = () => {
-    setWhitebeardFound(true);
-  }
-
-  const foundOdlaw = () => {
-    setOdlawFound(true);
-  }
-
   useEffect(() => {
     axios.get(baseURL).then((response) => {
       let puzzleChars = [];
@@ -73,7 +53,6 @@ const Puzzle = () => {
     setX(newX);
     setY(newY);
     checkInput(newX,newY);
-
   };
 
   const checkInput = (x, y) => {
@@ -86,31 +65,31 @@ const Puzzle = () => {
             switch(char.name) {
               case "Waldo":
                 if(!WaldoFound) {
-                  foundWaldo();
+                  setWaldoFound(true);
                   setFound(found+1);
                 } 
                 break;
               case "Wenda":
                 if(!WendaFound) {
-                  foundWenda();
+                  setWendaFound(true);
                   setFound(found+1);
                 } 
                 break;
               case "Woof":
                 if(!WoofFound) {
-                  foundWoof();
+                  setWoofFound(true);
                   setFound(found+1);
                 } 
                 break;
               case "Whitebeard":
                 if(!WhitebeardFound) {
-                  foundWhitebeard();
+                  setWhitebeardFound(true);
                   setFound(found+1);
                 } 
                 break;
               case "Odlaw":
                 if(!OdlawFound) {
-                  foundOdlaw();
+                  setOdlawFound(true);
                   setFound(found+1);
                 } 
                 break;
@@ -127,15 +106,27 @@ const Puzzle = () => {
   if(found === 5) {
     newPlayer = <NewPlayer time={time} puzzleID={params.puzzleId}/>
     scores = <Scores puzzleID={params.puzzleId}/>
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
   }
 
   return (
     <div>
-      <p>{time}</p>
-      <div>{newPlayer}</div>
-      <div>{scores}</div>
-      <img onClick={getCoordinates} src={state.img} alt={state.name}/>
-      <Character characters={characters} foundWaldo={WaldoFound} foundWenda={WendaFound} foundOdlaw={OdlawFound} foundWhitebeard={WhitebeardFound} foundWoof={WoofFound}/>
+      <div class="text-3xl font-serif h-16 flex items-center justify-center bg-red-400">Where's waldo?</div>
+      <div id="modal" aria-hidden="true" class="hidden fixed left-0 top-0 w-full h-full z-[1] overflow-auto bg-black/50">
+        <div class="border container w-96 mx-auto mt-32 bg-white">        
+          <div>{newPlayer}</div>
+          <div>{scores}</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="flex flex-col items-center">
+          <p class="text-2xl font-bold">Timer: {time}</p>
+          <Character characters={characters} foundWaldo={WaldoFound} foundWenda={WendaFound} foundOdlaw={OdlawFound} foundWhitebeard={WhitebeardFound} foundWoof={WoofFound}/>
+        </div>
+          <img class="h-3/4 w-3/4" onClick={getCoordinates} src={state.img} alt={state.name}/>     
+      </div>
+      
     </div>
   )
 };

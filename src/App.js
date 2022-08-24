@@ -19,8 +19,8 @@ function App() {
 
   return (
     <div>
-      <h1>Where's Waldo ?</h1>
-      <h2>Choose an image</h2> 
+      <div class="text-3xl font-serif h-16 flex items-center justify-center bg-red-400">Where's waldo?</div>
+      <h2 class="text-center text-2xl mt-6 mb-6">Choose an image</h2> 
       <Card images={images}/>
     </div>
     );

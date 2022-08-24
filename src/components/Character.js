@@ -5,27 +5,22 @@ import Waldo from '../images/Waldo.jpg';
 import Wenda from '../images/Wenda.jpg';
 import Whitebeard from '../images/Whitebeard.jpg';
 import Woof from '../images/Woof.jpg';
-import OdlawFound from '../images/Odlaw-found.jpg';
-import WaldoFound from '../images/Waldo-found.jpg';
-import WendaFound from '../images/Wenda-found.jpg';
-import WhitebeardFound from '../images/Whitebeard-found.jpg';
-import WoofFound from '../images/Woof-found.jpg';  
 
 const Character = (props) => {
-  const [waldo, setWaldo] = useState({img:Waldo, imgFound:WaldoFound, name:'Waldo'});
-  const [wenda, setWenda] = useState({img:Wenda, imgFound:WendaFound, name:'Wenda'});
-  const [odlaw, setOdlaw] = useState({img:Odlaw, imgFound:OdlawFound, name:'Odlaw'});
-  const [whitebeard, setWhitebeard] = useState({img:Whitebeard, imgFound:WhitebeardFound, name:'Whitebeard'});
-  const [woof, setWoof] = useState({img:Woof, imgFound:WoofFound, name:'Woof'});
+  const [waldo, setWaldo] = useState({img:Waldo, name:'Waldo'});
+  const [wenda, setWenda] = useState({img:Wenda, name:'Wenda'});
+  const [odlaw, setOdlaw] = useState({img:Odlaw, name:'Odlaw'});
+  const [whitebeard, setWhitebeard] = useState({img:Whitebeard, name:'Whitebeard'});
+  const [woof, setWoof] = useState({img:Woof, name:'Woof'});
 
 
   return (
-    <div>
-    {props.foundWaldo ? <img src={waldo.imgFound} alt={waldo.name}/> : <img src={waldo.img} alt={waldo.name}/>}
-    {props.foundWenda ? <img src={wenda.imgFound} alt={wenda.name}/> : <img src={wenda.img} alt={wenda.name}/>}
-    {props.foundOdlaw ? <img src={odlaw.imgFound} alt={odlaw.name}/> : <img src={odlaw.img} alt={odlaw.name}/>}
-    {props.foundWhitebeard ? <img src={whitebeard.imgFound} alt={whitebeard.name}/> : <img src={whitebeard.img} alt={whitebeard.name}/>}
-    {props.foundWoof ? <img src={woof.imgFound} alt={woof.name}/> : <img src={woof.img} alt={woof.name}/>}
+    <div class="border border-black">
+      {props.foundWaldo ? <img class="border-4 border-green-700"src={waldo.img} alt={waldo.name}/> : <img class="border-4 border-red-600" src={waldo.img} alt={waldo.name}/>}
+      {props.foundWenda ? <img class="border-4 border-green-700" src={wenda.img} alt={wenda.name}/> : <img class="border-4 border-red-600" src={wenda.img} alt={wenda.name}/>}
+      {props.foundOdlaw ? <img class="border-4 border-green-700" src={odlaw.img} alt={odlaw.name}/> : <img class="border-4 border-red-600" src={odlaw.img} alt={odlaw.name}/>}
+      {props.foundWhitebeard ? <img class="border-4 border-green-700" src={whitebeard.img} alt={whitebeard.name}/> : <img class="border-4 border-red-600" src={whitebeard.img} alt={whitebeard.name}/>}
+      {props.foundWoof ? <img class="border-4 border-green-700" src={woof.img} alt={woof.name}/> : <img class="border-4 border-red-600" src={woof.img} alt={woof.name}/>}
     </div>
   );
 };
