@@ -11,6 +11,9 @@ const Scores = (props) => {
         // eslint-disable-next-line eqeqeq
         if(response.data[i].image_id == props.puzzleID) {
           getPlayers.push(response.data[i]);
+          getPlayers.sort((a, b) => {
+            return a.time - b.time;
+        });
           setPlayers(getPlayers);
         }
       }
