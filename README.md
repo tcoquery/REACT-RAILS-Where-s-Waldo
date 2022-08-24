@@ -10,8 +10,8 @@ When the player finds all characters, he can enter his name which is stored in t
 
 Screenshots :
 
-![home page](https://imgur.com/wzgj3LR)
+![home page](https://imgur.com/wzgj3LR.png)
 
-![puzzle page](https://imgur.com/mcggsBf)
+![puzzle page](https://imgur.com/mcggsBf.png)
 
-![puzzle page with scores](https://imgur.com/vquyL6b)
+![puzzle page with scores](https://imgur.com/vquyL6b.png)
