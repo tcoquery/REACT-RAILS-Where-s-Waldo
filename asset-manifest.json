@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/REACT-Where-s-Waldo/static/css/main.620edba5.css",
+    "main.js": "/REACT-Where-s-Waldo/static/js/main.7caa5265.js",
+    "static/media/fruit.jpg": "/REACT-Where-s-Waldo/static/media/fruit.fac57bc4d7d1048f0be8.jpg",
+    "static/media/track.jpg": "/REACT-Where-s-Waldo/static/media/track.2af5fa5982f852221f2b.jpg",
+    "static/media/hollywood.jpg": "/REACT-Where-s-Waldo/static/media/hollywood.1ba876e19cc676d39239.jpg",
+    "static/media/space.jpg": "/REACT-Where-s-Waldo/static/media/space.93bf5cc42083ba111a8f.jpg",
+    "static/media/ski.jpg": "/REACT-Where-s-Waldo/static/media/ski.5cc7eec7a5998adcc5b3.jpg",
+    "static/media/beach.jpg": "/REACT-Where-s-Waldo/static/media/beach.6b2c5b88c0dabadbd035.jpg",
+    "static/media/Odlaw.jpg": "/REACT-Where-s-Waldo/static/media/Odlaw.433fb96b89e508a209c2.jpg",
+    "static/media/Woof.jpg": "/REACT-Where-s-Waldo/static/media/Woof.a8faeacd020cb6e22b5f.jpg",
+    "static/media/Whitebeard.jpg": "/REACT-Where-s-Waldo/static/media/Whitebeard.c6856f1ed6607269e6f6.jpg",
+    "index.html": "/REACT-Where-s-Waldo/index.html",
+    "main.620edba5.css.map": "/REACT-Where-s-Waldo/static/css/main.620edba5.css.map",
+    "main.7caa5265.js.map": "/REACT-Where-s-Waldo/static/js/main.7caa5265.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.620edba5.css",
+    "static/js/main.7caa5265.js"
+  ]
+}
