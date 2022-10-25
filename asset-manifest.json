@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/REACT-Where-s-Waldo/static/css/main.620edba5.css",
-    "main.js": "/REACT-Where-s-Waldo/static/js/main.0a747fb7.js",
+    "main.js": "/REACT-Where-s-Waldo/static/js/main.cff834b0.js",
     "static/media/fruit.jpg": "/REACT-Where-s-Waldo/static/media/fruit.fac57bc4d7d1048f0be8.jpg",
     "static/media/track.jpg": "/REACT-Where-s-Waldo/static/media/track.2af5fa5982f852221f2b.jpg",
     "static/media/hollywood.jpg": "/REACT-Where-s-Waldo/static/media/hollywood.1ba876e19cc676d39239.jpg",
@@ -13,10 +13,10 @@
     "static/media/Whitebeard.jpg": "/REACT-Where-s-Waldo/static/media/Whitebeard.c6856f1ed6607269e6f6.jpg",
     "index.html": "/REACT-Where-s-Waldo/index.html",
     "main.620edba5.css.map": "/REACT-Where-s-Waldo/static/css/main.620edba5.css.map",
-    "main.0a747fb7.js.map": "/REACT-Where-s-Waldo/static/js/main.0a747fb7.js.map"
+    "main.cff834b0.js.map": "/REACT-Where-s-Waldo/static/js/main.cff834b0.js.map"
   },
   "entrypoints": [
     "static/css/main.620edba5.css",
-    "static/js/main.0a747fb7.js"
+    "static/js/main.cff834b0.js"
   ]
 }
