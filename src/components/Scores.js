@@ -5,7 +5,7 @@ const Scores = (props) => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/players").then((response) => {
+    axios.get("https://waldo-backend-api.herokuapp.com/players").then((response) => {
       let getPlayers = [];
       for(let i=0; i < response.data.length; i++){
         // eslint-disable-next-line eqeqeq

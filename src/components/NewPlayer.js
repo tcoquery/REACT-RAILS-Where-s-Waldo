@@ -12,8 +12,8 @@ const NewPlayer = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/player", { player: {name: name, time: time, image_id: props.puzzleID}})
-    window.location.href="http://localhost:4000";
+    axios.post("https://waldo-backend-api.herokuapp.com/player", { player: {name: name, time: time, image_id: props.puzzleID}});
+    window.location.href = "https://tcoquery.github.io/REACT-Where-s-Waldo"
   };
 
   return (

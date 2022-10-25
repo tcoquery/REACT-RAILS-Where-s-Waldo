@@ -7,10 +7,10 @@ import Puzzle from './components/Puzzle';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Routes>
-      <Route path="{process.env.PUBLIC_URL + '/'" element={<App />}/>
-      <Route path="{process.env.PUBLIC_URL + '/:puzzleId'" element={<Puzzle />}/>
+      <Route path="/" element={<App />}/>
+      <Route path="/:puzzleId" element={<Puzzle />}/>
     </Routes>
   </Router>
 );

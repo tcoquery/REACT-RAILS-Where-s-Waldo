@@ -48,8 +48,8 @@ const Puzzle = () => {
   }, [found]);
 
   const getCoordinates = (e) => {
-    const newX = e.pageX;
-    const newY = e.pageY;
+    const newX = e.clientX;
+    const newY = e.clientY;
     setX(newX);
     setY(newY);
     checkInput(newX,newY);
